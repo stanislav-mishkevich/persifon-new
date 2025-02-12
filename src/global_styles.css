@@ -1,0 +1,83 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+:root {
+  --primary-color: #32CD32; /* Lime Green */
+  --secondary-color: #228B22; /* Forest Green */
+}
+
+body {
+  font-family: 'Roboto', system-ui, -apple-system, sans-serif;
+  @apply antialiased;
+  margin: 0;
+}
+
+.container {
+  @apply max-w-7xl mx-auto px-4;
+}
+
+/* Material Design Overrides */
+.mat-toolbar {
+  @apply px-0;
+  background-color: var(--primary-color); /* Set toolbar background to primary color */
+}
+
+.mat-button-base {
+  text-transform: none !important;
+  color: var(--secondary-color); /* Set button text color to secondary color */
+}
+
+/* Add animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Informative blocks */
+.informative-block {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+/* Full-screen menu styles */
+.fullscreen-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.fullscreen-menu.active {
+  opacity: 1;
+}
+
+/* Menu items */
+.fullscreen-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  margin: 10px 0;
+}
